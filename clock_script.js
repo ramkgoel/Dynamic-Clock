@@ -5,29 +5,48 @@ function rotateSecondsHand(){
         angle += 1;
         secondHandElement.style.transform = `rotate(${angle}deg)`
     }
-    setInterval(rotateLineOneSecond, 166.67);
+    
 }
 
 function rotateMinutesHand(){
-    const minuteHandElement = document.querySelector('.clock-seconds-hand')
+    const minuteHandElement = document.querySelector('.clock-minutes-hand')
     let angle = 270;
     function rotateLineOneMinute(){
         angle += 1;
-        secondHandElement.style.transform = `rotate(${angle}deg)`
+        minuteHandElement.style.transform = `rotate(${angle}deg)`
     }
-    setInterval(rotateLineOneSecond, 10000);
+    setInterval(rotateLineOneMinute, 10000);
 }
 
 function rotateHoursHand(){
-    const secondHandElement = document.querySelector('.clock-seconds-hand')
+    const hourHandElement = document.querySelector('.clock-hours-hand')
     let angle = 270;
-    function rotateLineOneSecond(){
+    function rotateLineOneHour(){
         angle += 1;
-        secondHandElement.style.transform = `rotate(${angle}deg)`
+        hourHandElement.style.transform = `rotate(${angle}deg)`
     }
-    setInterval(rotateLineOneSecond, 600000);
+    setInterval(rotateLineOneHour, 600000);
 }
 
-rotateSecondsHand();
-rotateMinutesHand();
-rotateHoursHand();
+let secondAngle = 270;
+let minuteAngle = 270;
+let hourAngle = 270;
+
+function rotateClock(){
+    const secondHandElement = document.querySelector('.clock-seconds-hand');
+    const minuteHandElement = document.querySelector('.clock-minutes-hand');
+    const hourHandElement = document.querySelector('.clock-hours-hand')
+
+    secondAngle += 60;
+    secondHandElement.style.transform = `rotate(${secondAngle}deg)`
+
+    minuteAngle += 1;
+    minuteHandElement.style.transform = `rotate(${minuteAngle}deg)`
+    
+    hourAngle += 0.0016;
+    hourHandElement.style.transform = `rotate(${hourAngle}deg)`
+
+    setInterval(rotateClock, 10000);
+}
+
+rotateClock();
