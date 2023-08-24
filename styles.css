@@ -1,0 +1,95 @@
+h1 {
+    color: blue;
+    font-size: 24px;
+    text-align: left;
+}
+
+h2 {
+    color: red;
+    font-size: 15px;
+    text-align: left;
+}
+
+h3 {
+    color: black;
+    font-size: 30px;
+    text-align: center;
+}
+
+.header {
+    display: inline-block;
+    margin-right: 30px;
+    vertical-align: top;
+    width: 350px;
+}
+
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+
+.clock-face {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    align-self: left;
+    border-radius: 50%; /* this is what makes it a circle */
+    background-color: lightblue;
+    border: 3px solid black;
+}
+
+.clock-center {
+    position: absolute;
+    top: 50%; /* the top and left determine the position of clock-center relative to containing block: clock-face */
+    left: 50%; /* so the 50% is in terms of the specs of the containing block */
+    /* so now the top-left corner of this object is at 50%, 50% of the previous object, i.e. at the center */
+    
+    background-color: darkblue;
+    width: 20px;
+    height: 20px; /* now all the percentages are in terms of these specs */
+
+    border-radius: 50%;
+    transform: translate(-50%, -50%); /* move the object so that center (not top left corner) of center-circle is at center of clock-face.*/
+    /* so we moved the center left 50% of its own diameter, and up 50% of its own diameter*/
+}
+
+.clock-seconds-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    background-color: red;
+
+    width: 190px;
+    height: 2px;
+
+    transform-origin: top left;
+    transform: rotate(270deg);
+}
+
+.clock-minutes-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    background-color: black;
+
+    width: 180px;
+    height: 4px;
+
+    transform-origin: top left;
+    transform: rotate(270deg);
+}
+
+.clock-hours-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    background-color: black;
+
+    width: 120px;
+    height: 6px;
+
+    transform-origin: top left;
+    transform: rotate(270deg);
+}
