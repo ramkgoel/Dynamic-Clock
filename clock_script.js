@@ -48,7 +48,7 @@ function rotateClock(){
     hourAngle += 0.0016;
     hourHandElement.style.transform = `rotate(${hourAngle}deg)`;
 
-    setInterval(rotateClock, 1000);
+    setTimeout(rotateClock, 1000);
 }
 
 rotateClock();
