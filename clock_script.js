@@ -31,7 +31,7 @@ function rotateHoursHand(){
 */
 
 let secondAngle = 270;
-let sixTimesMinuteAngle = 6*270;
+let MinuteAngle = 270;
 let hourAngle = 270;
 
 function rotateClock(){
@@ -42,11 +42,8 @@ function rotateClock(){
     secondAngle += 6;
     secondHandElement.style.transform = `rotate(${secondAngle}deg)`;
 
-    sixTimesMinuteAngle += 1;
-    if(sixTimesMinuteAngles % 6 === 0){
-        minuteHandElement.style.transform = `rotate(${sixTimesMinuteAngle/6}deg)`;
-    }
-    
+    MinuteAngle += 0.1;
+    minuteHandElement.style.transform = `rotate(${MinuteAngle}deg)`;
     
     hourAngle += 0.0016;
     hourHandElement.style.transform = `rotate(${hourAngle}deg)`;
